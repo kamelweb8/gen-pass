@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Password</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h3>Password Generator</h3>
+                    </div>
+                    <div class="card-body">
+                        <form id="passwordForm">
+                            <div class="mb-3">
+                                <label for="length" class="form-label">Password Length</label>
+                                <input type="number" class="form-control" id="length" min="4" max="32" value="12" required>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="upper" checked>
+                                <label class="form-check-label" for="upper">Include Uppercase Letters</label>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="lower" checked>
+                                <label class="form-check-label" for="lower">Include Lowercase Letters</label>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="numbers" checked>
+                                <label class="form-check-label" for="numbers">Include Numbers</label>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="symbols" checked>
+                                <label class="form-check-label" for="symbols">Include Symbols</label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-3">
+            <div class="col-md-6 text-center">
+                <button id="generateBtn" class="btn btn-primary" onclick="generate()">
+                    <i class="fas fa-sync-alt"></i> Generate Password
+                </button>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-3">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h4>Generated Password</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" id="password" readonly>
+                            <button class="btn btn-success" onclick="copyPassword()">
+                                <i class="fas fa-copy"></i> Copy
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-3 mb-5">
+            <div class="col-md-6">
+                <label>Password strength:</label>
+                <div class="progress">
+                    <div id="strength-bar" class="progress-bar" role="progressbar"></div>
+                </div>
+                <small id="strength-text" class="text-muted"></small>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
